@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Solar PV | Home{% endblock %}
+
+{% block content %}
+
+
+	<link rel="stylesheet" href="{% static 'css/home.css' %}"> <!-- middle css -->
+      <!-- middle container -->
+			<div class="middle">
+        <div id="slider">  <!-- Slider container -->
+  				<div id="mask">  <!-- Mask -->
+  					<ul>
+  						<li id="first" class="firstanimation">  <!-- ID for tooltip and class for animation -->
+  						<a href="#"> <img src="{% static 'images/disney.jpg' %}" alt="The Disney Solar Farm"/> </a>
+  						<div class="tooltip"> <h1>The Disney Solar Farm, Florida</h1> </div>
+  						</li>
+
+  						<li id="second" class="secondanimation">
+  						<a href="#"> <img src="{% static 'images/chattanooga-solar-farm.jpg' %}" alt="The Chattanooga Airport Solar Farm"/> </a>
+  						<div class="tooltip"> <h1>The Chattanooga Airport Solar Farm, Tennessee</h1> </div>
+  						</li>
+
+  						<li id="third" class="thirdanimation">
+  						<a href="#"> <img src="{% static 'images/PS20-PS10.jpg' %}" alt="The Planta Solar 10 and 20 solar power plants"/> </a>
+  						<div class="tooltip"> <h1>The Planta Solar 10 and 20 (PS10 and PS20) solar power plants, Spain</h1> </div>
+  						</li>
+
+  						<li id="fourth" class="fourthanimation">
+  						<a href="#"> <img src="{% static 'images/topaz.jpg' %}" alt="The Topaz Solar Farm"/> </a>
+  						<div class="tooltip"> <h1>The Topaz Solar Farm, California</h1> </div>
+  						</li>
+
+  						<li id="fifth" class="fifthanimation">
+  						<a href="#"> <img src="{% static 'images/crescent.jpg' %}" alt="The Crescent Dunes Solar Energy Project"/> </a>
+  						<div class="tooltip"> <h1>The Crescent Dunes Solar Energy Project, Nevada</h1> </div>
+  						</li>
+  					</ul>
+  				</div>  <!-- End Mask -->
+  				<div class="progress-bar"></div>  <!-- Progress Bar -->
+  			</div> <!-- end slider -->
+
+        <h2>What is Solar Power?</h2>
+          <div class="vidwrapper">
+            <div class="vidcontainer">
+              <iframe src="https://www.youtube.com/embed/NLO9w963Aj0" frameborder="0" allow="accelerometer; autoplay; encrypted-meida; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+
+        <h2>What is PV?</h2>
+          <div class="vidwrapper">
+            <div class="vidcontainer">
+              <iframe src="https://www.youtube.com/embed/gl5tY5Noacc" frameborder="0" allow="accelerometer; autoplay; encrypted-meida; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+      </div> <!-- end middle -->
+
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Solar PV | User Portal{% endblock %}
+
+{% block content %}
+
+	<link rel="stylesheet" href="{% static 'css/portal.css' %}">
+
+	<!-- middle container -->
+	<div class="middle">
+		<h1>{{ user }}'s Portal</h1>
+
+
+		<div class="row">
+			<div class="col">
+				<h3>My Profile</h3><br/>
+				<i class="far fa-user" style="color:#000"></i><br/><br/>
+				<p><a href="{% url 'profile' %}">View and Edit Profile<br/></a></p>
+			</div>
+			<div class="col">
+				<h3>Clients</h3><br/>
+				<i class="fas fa-users" style="color:#e93f47"></i><br/><br/>
+				<p><a href="{% url 'list-clients' %}">View Clients<br/>
+				<a href="{% url 'add-client' %}">Add A Client<br/>
+				<a href="{% url 'search-clients' %}">Search Clients<br/></p></a>
+			</div>
+			<div class="col">
+				<h3>Locations</h3><br/>
+				<i class="fas fa-map-marked-alt" style="color:#ff8f33"></i><br/><br/>
+				<p><a href="{% url 'list-locations' %}">View Locations<br/>
+				<a href="{% url 'add-location' %}">Add A Location<br/>
+				<a href="{% url 'search-locations' %}">Search Locations<br/></p></a>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<h3>Products</h3><br/>
+				<i class="fas fa-solar-panel" style="color:#44ff33"></i><br/><br/>
+				<p><a href="{% url 'list-products' %}">View Products<br/>
+				<a href="{% url 'add-product' %}">Register A Product<br/>
+				<a href="{% url 'search-products' %}">Search Products<br/></p></a>
+			</div>
+			<div class="col">
+				<h3>Certificates</h3><br/>
+				<i class="fas fa-certificate" style="color:#f0e00a"></i><br/><br/>
+				<p><a href="{% url 'list-certificates' %}">View Certificates<br/>
+				<a href="{% url 'add-certificate' %}">Add A Certificate<br/>
+				<a href="{% url 'search-certificates' %}">Search Certificates<br/></p></a>
+			</div>
+			<div class="col">
+				<h3>Services</h3><br/>
+				<i class="fas fa-tools" style="color:#7e7d75"></i><br/><br/>
+				<p><a href="{% url 'list-services' %}">View Services<br/>
+				<a href="{% url 'add-service' %}">Add A Service<br/>
+				<a href="{% url 'search-services' %}">Search Services<br/></p></a>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<h3>Performance Data</h3><br/>
+				<i class="fas fa-chart-line" style="color:#3633ff"></i><br/><br/>
+				<p><a href="{% url 'list-performance-datas' %}">View Performance Datas<br/>
+				<a href="{% url 'add-performance-data' %}"> Add Performance Data<br/>
+				<a href="{% url 'search-performance-datas' %}">Search Performance Data<br/></p></a>
+			</div>
+			<div class="col">
+				<h3>Test Sequences</h3><br/>
+				<i class="fas fa-project-diagram" style="color:#f00a98"></i><br/><br/>
+				<p><a href="{% url 'list-test-sequences' %}">View Test Sequences<br/>
+				<a href="{% url 'add-test-sequence' %}">Add A Test Sequence<br/>
+				<a href="{% url 'search-test-sequences' %}">Search Test Sequences<br/></p></a>
+			</div>
+			<div class="col">
+				<h3>Test Standards</h3><br/>
+				<i class="fas fa-clipboard-check" style="color:#30ece3"></i><br/><br/>
+				<p><a href="{% url 'list-test-standards' %}">View Test Standards<br/>
+				<a href="{% url 'add-test-standard' %}">Add A Test Standard<br/>
+				<a href="{% url 'search-test-standards' %}">Search Test Standards<br/></p></a>
+			</div>
+		</div>
+
+	</div> <!-- end middle -->
+
+{% endblock %}

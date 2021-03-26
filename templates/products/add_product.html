@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <center>
+        <h1>Add A Product</h1>
+    </center>
+    <br/>
+    {% if submitted %}
+        <center>
+            Product submitted successfully!<br/></h3>        
+
+            <a href="{% url 'portal' %}">Return To Your Portal</a>
+        </center><h3>
+    {% else %}
+        <form action="" method=POST>
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <input type="submit" value="Submit" class="btn btn-warning">
+        </form>
+    {% endif %}
+
+{% endblock %}

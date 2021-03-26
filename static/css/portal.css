@@ -1,0 +1,38 @@
+/* portal.css interacts with portal.html */
+
+.middle {
+  padding: 15px;
+}
+
+.middle h1 {
+  text-align: center;
+}
+
+.middle .row {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+}
+
+.middle .col {
+  width: 30%;
+  height: auto;
+  padding-bottom: 5%;
+  background: #FFF;
+  margin: 1%;
+  box-sizing: border-box;
+  font-size: 15px;
+  text-align: center;
+  border: 5px solid #DDDDDD;
+}
+
+.middle .col i {
+  font-size: 30px;
+}
+
+.middle a {
+  text-decoration: none;
+}

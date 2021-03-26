@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <center>
+
+        <h1>Search Certificates</h1><br/>
+        <form class="d-flex" method=POST action="{% url 'certificate-search-results' %}">
+            {% csrf_token %}
+            <input class="form-control me-2" type="search" placeholder="Search" name="searched" aria-label="Search">
+            <button class="btn btn-outline-warning" type="submit">Search</button>
+          </form>
+    </center>
+{% endblock %}

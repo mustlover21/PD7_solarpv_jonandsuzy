@@ -1,0 +1,137 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <!-- Base CSS overriding Bootstrap -->
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <!-- icons from Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+        
+        <title>
+        {% block title %}SOLAR PV{% endblock %}
+        </title>
+
+    </head>
+    <body>
+        <div class="container-fluid d-flex justify-content-between">
+            <div class="p-2 bd-highlight"><a href="{% url 'home' %}"><img src="{% static 'images/PV.png' %}" alt="logo" height="100px" width="275px"></a></div>
+                <ul class="p-2 bd-highlight align-self-center">
+                <li class="nav-item" style="list-style: none;">
+                    <a href="https://www.facebook.com/solarpv" class="icons"><i class="fab fa-facebook-f" style="font-size:15px;color:blue;"></i></a>
+                    <a href="https://www.twitter.com/solarpv" class="icons"><i class="fab fa-twitter" style="font-size:15px;color:lightblue;"></i></a>
+                    <a href="https://www.plus.google.com/solarpv" class="icons"><i class="fab fa-google-plus-g" style="font-size:15px;color:green;"></i></a>
+                    <a href="https://www.instagram.com/solarpv" class="icons"><i class="fab fa-instagram" style="font-size:15px;color:purple;"></i></a>
+                    <a href="https://www.pintrest.com/solarpv" class="icons"><i class="fab fa-pinterest" style="font-size:15px;color:black;"></i></a>
+                    <a href="https://www.youtube.com.com/solarpv" class="icons"><i class="fab fa-youtube" style="font-size:15px;color:red;"></i></a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Nav Bar Goes Here -->
+        {% include 'navbar.html' %}
+
+        <!-- Begin middle containers -->
+        <div class="container-fluid">
+            
+            <div class="row align-items-start">
+                <!-- column width no more than 12 columns per line... -3 -6 -3 = 12 columns -->
+
+                <!-- Left Column -->
+                <div class="col-3">
+                    {% if user.is_authenticated %}
+                        <h3 class="reg/login"><a href="{% url 'portal' %}">My Portal</a> | <a href="{% url 'logout' %}">Log Out</a> </h3>
+                    {% else %}
+                        <h3 class="reg/login"><a href="{% url 'register' %}">Register</a> | <a href="{% url 'login' %}">Login</a></h3>
+                    {% endif %}
+
+        
+                    <h5>PV Module</h5>
+                    <ul>
+                        <li><a href="{% url 'search-certificates' %}">Testing & Certification</a></li>
+                        <li>PV Rating</li>
+                    </ul>
+
+                    <h5>PV System Performance</h5>
+                    <ul>
+                        <li>Monitoring & Inspection</li>
+                        <li>Performance Analysis</li>
+                        <li>Compare system</li>
+                        <li><a href="">Certification</a></li>
+                    </ul>
+
+                    <h5>Data Analytics</h5>
+                    <ul>
+                        <li>Module lifetime prediction</li>
+                        <li>Energy Prediction</li>
+                    </ul>
+
+                    <h5>Cybersecurity and Smart Grid Technologies</h5>
+                        <a href=""><h5>Solar PV University</h5></a>
+                </div>
+
+                <!-- Middle Column -->
+                <div class="col-6">  
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                    {{ message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+
+                    {% block content %}
+                    {% endblock %}
+                </div>
+
+                <!-- Right Column -->
+                <div class="col-3">
+                    <h2>News & Events</h2>
+                    <br>
+                    <h3>US News and Events</h3>
+                    <ul>
+                        <li><a href="https://news.google.com/articles/CAIiELkVdjRWUlftmmX9bOUNGxEqGQgEKhAIACoHCAowocv1CjCSptoCMPrTpgU?hl=en-US&gl=US&ceid=US%3Aen">Military Joint Chiefs condemn 'sedition and insurrection' at Capitol as federal and local officials scramble to ensure security</a></li>
+                    <br/>
+                        <li><a href="https://news.google.com/articles/CAIiEK2mIycHQzS0UORexVyY4FoqGAgEKg8IACoHCAowjtSUCjC30XQwzqe5AQ?hl=en-US&gl=US&ceid=US%3Aen">Biden team sees risks in Trump decision to widen vaccine pool</a></li>
+                    <br/>
+                        <li><a href="https://news.google.com/articles/CAIiEDSnqggNgOlERMsmgUcPOowqGQgEKhAIACoHCAowtYmYCzC8s68DMJWBzwY?hl=en-US&gl=US&ceid=US%3Aen">70TB of Parler user's data leaked by security researchers</a></li>
+                    <br/>
+                    </ul>
+                    <h3>Solar News and Events</h3>
+                    <ul>
+                        <li><a href="https://news.google.com/articles/CAIiEImOsfHZw406SXk6kxV3qpYqGQgEKhAIACoHCAow3rv_CjC88fgCMIrVsAY?hl=en-US&gl=US&ceid=US%3Aen">Key 2020 US Solar PV Cost Trends and a Look Ahead</a></li>
+                    <br/>
+                        <li><a href="https://news.google.com/articles/CBMiZmh0dHBzOi8vcHYtbWFnYXppbmUtdXNhLmNvbS8yMDIxLzAxLzEyL3N1bnJpc2UtYnJpZWYtbnJlbC11cHMtaXRzLWN5YmVyc2VjdXJpdHktcmVzZWFyY2gtY2FwYWJpbGl0aWVzL9IBAA?hl=en-US&gl=US&ceid=US%3Aen">Sunrise brief: NREL ups its cybersecurity research capabilities</a></li>
+                    <br/>
+                        <li><a href="https://news.google.com/articles/CBMiV2h0dHBzOi8vcHYtbWFnYXppbmUtdXNhLmNvbS8yMDIxLzAxLzEyL2FtYXpvbi10by1zaGFyZS0xMjAtbXctb2Ytc29sYXItd2l0aC1kLWMtc3VidXJiL9IBAA?hl=en-US&gl=US&ceid=US%3Aen">Amazon to share 120 MW of solar with D.C. suburb</a></li>
+                    <br/>
+                    </ul>
+                </div>
+            </div>
+            
+          </div>
+
+        <!-- Begin Footer -->
+        <footer class="my-5 pt-5 text-muted text-center text-small bg-warning">
+            <p class="mb-1">Solar PV<br/>
+                1234 Industrial Way | Phoenix, AZ 87654<br/>
+                (480) 555-9876 | www.solarpv.com | info@solarpv.com</p>
+                <p>Copyright &copy; 2021</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Site Map</a></li>
+                <li class="list-inline-item"><a href="#">About Us</a></li>
+            </ul>
+            <br/>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,7 @@
+/* navbar.css interacts with navbar.html */
+
+.d-flex .nav-item a {
+    color: #13ab;
+    margin: 0;
+    padding-left: 10px;
+}

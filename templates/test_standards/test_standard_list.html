@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <center>
+        <h1>Test Standard</h1><br/>
+
+        {% for test_standard in test_standard_list %}
+        
+            <a href="{% url 'test-standard-detail' test_standard.id %}"><br/>{{ test_standard }}</a>
+            
+        {% endfor %}
+    </center>
+{% endblock %}

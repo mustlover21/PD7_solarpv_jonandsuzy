@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <center>
+        {% if searched %}
+        <h1>Search Results</h1><br/>
+
+            {% for product in products %}
+
+                <a href="{% url 'product-detail' product.id %}">{{ product }}<br/></a>
+
+            {% endfor %}
+        {% else %}
+            <br/><br/><h1>Query box cannot be empty. <br/>Please try your query again.</h1>
+        {% endif %}
+        <br/><br/><br/><br/>
+        <a href="{% url 'search-products' %}">Return to Search Page</a>
+    </center>
+{% endblock %}

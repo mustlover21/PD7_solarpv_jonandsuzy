@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <center>
+        <h1>Certificates</h1><br/>
+
+        {% for certificate in certificate_list %}
+        
+            <a href="{% url 'certificate-detail' certificate.id %}"><br/>{{ certificate }}</a>
+            
+        {% endfor %}
+    </center>
+{% endblock %}

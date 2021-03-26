@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <center>
+        <h1>Clients</h1><br/>
+
+        {% for client in client_list %}
+        
+            <a href="{% url 'client-location-detail' client.id %}"><br/>{{ client }} - {{client.client_type }}</a>
+            
+        {% endfor %}
+    </center>
+{% endblock %}

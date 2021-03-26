@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+   
+        <h1 class="text-center">Certificate {{ certificate.certificate_number }}<br/></h1>
+        <hr>        
+    
+    
+        <div class="card mx-auto d-block" style="width: 20rem;">
+            <img src="{% static 'images/cert.png' %}" class="img-thumbnail card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title text-center">Model {{ certificate.model_number }}</h5>
+            <p class="card-text text-left">
+                <b>Report Number:</b> {{ certificate.report_number }}<br/>
+                <b>Standard ID:</b> {{ certificate.standard_id }}<br/>
+                <b>Location ID:</b> {{ certificate.location_id }}<br/>
+                <b>Issued:</b> {{ certificate.issue_date }}<br/>
+                <b>Issuer:</b> {{ certificate.user }}<br/>                
+            </p>
+            </div>
+        </div>
+        
+        <br/><br/><br/>
+        <a href="{% url 'list-certificates' %}">Return to List</a>
+
+{% endblock %}

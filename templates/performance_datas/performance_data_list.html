@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <center>
+        <h1>Performance Data</h1><br/>
+
+        {% for performance_data in performance_data_list %}
+        
+            <a href="{% url 'performance-data-detail' performance_data.id %}"><br/>{{ performance_data }}</a>
+            
+        {% endfor %}
+    </center>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <center>
+        <h1>Test Sequence</h1><br/>
+
+        {% for test_sequence in test_sequence_list %}
+        
+            <a href="{% url 'test-sequence-detail' test_sequence.id %}"><br/>{{ test_sequence }}</a>
+            
+        {% endfor %}
+    </center>
+{% endblock %}

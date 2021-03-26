@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <center>
+        <h1>Location<br/></h1>
+        <hr>        
+    </center>
+    
+
+    <div class="card col-md-6 offset-md-3" style="width: 30rem;">
+        <div class="card-body">
+          <h4 class="card-text">
+            <i class="far fa-building"></i> {{ location.address1 }}<br/>
+              {{ location.address2 }}<br/>
+              {{ location.city }}, {{ location.state }}  {{ location.postal_code }}<br/>
+              {{ location.country }}<br/><br/>
+              <i class="fas fa-phone-alt"></i> {{ location.phone_number }}<br/>
+              <i class="fas fa-fax"></i> {{ location.fax_number }}
+            </p>
+        </div>
+      </div>
+        
+        <br/>
+        <a href="{% url 'list-products' %}">Return to List</a>
+
+{% endblock %}

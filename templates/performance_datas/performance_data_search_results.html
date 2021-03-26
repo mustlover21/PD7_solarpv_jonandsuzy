@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <center>
+        {% if searched %}
+        <h1>Search Results</h1><br/>
+
+            {% for performance_data in performance_datas %}
+
+                <a href="{% url 'performance-data-detail' client.id %}">{{ performance_data }}<br/></a>
+
+            {% endfor %}
+        {% else %}
+            <br/><br/><h1>Query box cannot be empty. <br/>Please try your query again.</h1>
+        {% endif %}
+        <br/><br/><br/><br/>
+        <a href="{% url 'search-performance-datas' %}">Return to Search Page</a>
+    </center>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <center>
+        {% if searched %}
+        <h1>Search Results</h1><br/>
+
+            {% for location in locations %}
+
+                <a href="{% url 'location-detail' location.id %}">{{ location }}<br/></a>
+
+            {% endfor %}
+        {% else %}
+            <br/><br/><h1>Query box cannot be empty. <br/>Please try your query again.</h1>
+        {% endif %}
+        <br/><br/><br/><br/>
+        <a href="{% url 'search-locations' %}">Return to Search Page</a>
+    </center>
+{% endblock %}
